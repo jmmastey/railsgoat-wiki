@@ -6,14 +6,14 @@
 
 [A4 - Insecure Direct Object Reference](./a4)
 
-[A5 - Insecure Direct Object Reference](./a5)
+[A5 - Security Misconfiguration](./a5)
 
-[A6 - Insecure Direct Object Reference](./a6)
+[A6 - Sensitive Data Exposure](./a6)
 
-[A7 - Insecure Direct Object Reference](./a7)
+[A7 - Missing Function Level Access Control](./a7)
 
-[A8 - Insecure Direct Object Reference](./a8)
+[A8 - Cross Site Request Forgery](./a8)
 
-[A9 - Insecure Direct Object Reference](./a9)
+[A9 - Using Components with Known Vulnerabilities](./a9)
 
-[A10 - Insecure Direct Object Reference](./a10)
+[A10 - Unvalidated Redirects and Forwards](./a10)
