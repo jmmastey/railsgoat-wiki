@@ -1,3 +1,3 @@
 ### Table of Contents
 
-[Tutorials](../tutorials)
+[Tutorials](./tutorials)
