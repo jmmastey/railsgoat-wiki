@@ -1,3 +1,4 @@
 Welcome to the railsgoat wiki!
 
-H
+## Table of Contents
+
