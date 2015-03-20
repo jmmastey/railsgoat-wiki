@@ -1,4 +1,4 @@
-![Welcome to Railsgoat](https://github.com/OWASP/railsgoat/blob/master/app/assets/images/railsgoat.png)
+![Welcome to Railsgoat](https://raw.githubusercontent.com/OWASP/railsgoat/master/app/assets/images/railsgoat.png)
 
 ### Table of Contents
 
