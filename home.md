@@ -1,4 +1,4 @@
-
+![test](./railsgoat.png)
 
 ### Table of Contents
 
