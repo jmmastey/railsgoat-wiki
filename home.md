@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/OWASP/railsgoat/master/app/assets/images/railsgoat.png" align="center" height="48" width="48" >
+<img src="https://raw.githubusercontent.com/OWASP/railsgoat/master/app/assets/images/railsgoat.png" align="center" height="200" width="200" >
 
 ### Table of Contents
 
