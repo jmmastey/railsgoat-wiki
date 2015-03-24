@@ -6,7 +6,7 @@ XSS flaws occur whenever an application takes untrusted data and sends it to a w
 
 Stored Cross-Site Scripting - The following code was taken from app/views/layouts/shared/_header.html.erb
 
-```ruby
+```html
 <li style="color: #FFFFFF">
   <!--
   I'm going to use HTML safe because we had some weird stuff
