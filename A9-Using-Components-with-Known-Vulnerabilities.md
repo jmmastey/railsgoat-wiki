@@ -34,6 +34,22 @@ We can see that the location.href DOM property is used to dynamically generate a
 
 ### Using Components with Known Vulnerabilities (DOM XSS) - ATTACK
 
+In order to demonstrate that you can indeed perform DOM XSS through this coding error, we will use a simple alert box. This does not appear to work in Chrome, Safari, or Firefox as they first URL encoded the script portion of the url before rendering which complicates browser interpretation. IE on the other hand, true to form, is totally vulnerable. The following example assumes you are running Railsgoat on localhost, port 3000. If this is the case, open IE, paste the URL (below) into IE.
+
+```html
+http://localhost:3000/tutorials/injection#</title></head><script>alert(1)</script>
+```
+
+The portion after the pound (#) symbol will close off the title and head portions of the HTML and then allow for properly generated JavaScript to be rendered and executed. After browsing to this URL, navigate to the tutorial where code snippets are shown and click on the "pop-up" link that appears after hovering over the code snippet. This should be all that is required to demonstrate DOM-XSS.
+
 ### Using Components with Known Vulnerabilities (DOM XSS) - SOLUTION
 
+Use the hoganEscape() function defined in application.js to solve this problem. For instance:
+
+```javascript
+'<html><head><title>Snippet :: Code View :: '+hoganEscape(location.href) +'</title></head>' 
+```
+
 # Hint
+
+Review the JQuery Code Snippet for any content that might be mirrored or reflected back and that is under our control.
