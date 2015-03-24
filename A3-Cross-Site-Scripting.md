@@ -16,6 +16,15 @@ Stored Cross-Site Scripting - The following code was taken from app/views/layout
   Welcome, <%= current_user.first_name.html_safe %>
 </li>
 ```
+
+Coincidentally, HTML safe is not safe from HTML Injection or "XSS" attacks. The name is deceiving. 
+
+```ruby
+# Psuedo-code to help conceptualize
+def raw(dirty_string)
+  dirty_string.to_s.html_safe
+end
+```
 # Solution
 
 # Hint
