@@ -29,12 +29,30 @@ The code (above) takes user input (params), and renders it back on the page with
 
 Ensure you are signed out of the application first. Make sure you are using something like Firefox as Safari/Chrome won't work for this exercise. Then, use the following link (substitute hostname for your actual hostname) to execute an alert box:
 
-```javascript
+```html
 http://127.0.0.1:3000/#test=<script>alert(1)</script>
 ```
 
 ### DOM-Based Cross-Site Scripting SOLUTION:
 
+Leverage the Hogan function for escaping (found in the application.js file) to escape user input:
+
+```javascript
+<!-- support for multiple languages coming soon! -->
+<script>
+  //document.write("<select style="width: 100px;">");
+  //document.write("<OPTION value=1>English</OPTION>");
+  //document.write("<OPTION value=2>Spanish</OPTION>");
+  try {
+    var hashParam = location.hash.split("#")[1];
+    var paramName = hashParam.split('=')[0];
+    var paramValue = hashParam.split('=')[1];
+    document.write("<OPTION value=3>" +   hoganEscape(paramValue)  + "</OPTION>");
+  } catch(err) {
+ }
+  //document.write("</select>");
+</script>
+```
 # Hint
 
 You should view the source of the login page, might be something interesting there.
