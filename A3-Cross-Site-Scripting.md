@@ -6,14 +6,14 @@ XSS flaws occur whenever an application takes untrusted data and sends it to a w
 
 Stored Cross-Site Scripting - The following code was taken from app/views/layouts/shared/_header.html.erb
 
-```erb
+```html_erb
 <li style="color: #FFFFFF">
   <!--
   I'm going to use HTML safe because we had some weird stuff
   going on with funny chars and jquery, plus it says safe so I'm guessing
   nothing bad will happen
   -->
-  Welcome, ruby<%= current_user.first_name.html_safe %>
+  Welcome, <%= current_user.first_name.html_safe %>
 </li>
 ```
 # Solution
