@@ -48,4 +48,39 @@ Note that all attributes associated with this user are returned via the API.
 
 # Solution
 
+### Model Attributes Exposure - ATTACK
+
+Use the API and review the data returned. Additional information on exploiting the API available under the _Extras > Logic Flaws Section_.
+
+### Model Attributes Exposure - SOLUTION
+
+Uncomment the as_json method within the user model. Additionally, call `.as_json` on any User model object you would like to return via the API or other means. Example:
+
+```ruby
+respond_with @user.admin ? User.all.as_json : @user.as_json
+```
+
+Upon uncommenting the `as_json` method within the User model, the `as_json` method will ensure the API output only returns those attributes you have allowed in the following code:
+
+```ruby
+def as_json
+  super(only: [:user_id, :email, :first_name, :last_name])
+end
+```
+
+The response from the API should look like:        
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json; charset=utf-8
+    X-UA-Compatible: IE=Edge
+    ETag: "2333488e856669ac637e37cb4cf09cb6"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: baa6a1c90004838793614e4c61633767
+    X-Runtime: 0.092768
+    Connection: close
+    
+    {"email":"jack@metacorp.com","first_name":"Jack","last_name":"Mannino","user_id":2}
+
 # Hint
+
+We have an API available... what does it return?
