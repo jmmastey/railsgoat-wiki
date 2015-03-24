@@ -13,11 +13,7 @@ Stored Cross-Site Scripting - The following code was taken from app/views/layout
   going on with funny chars and jquery, plus it says safe so I'm guessing
   nothing bad will happen
   -->
-```
-```ruby
   Welcome, <%= current_user.first_name.html_safe %>
-```
-```html
 </li>
 ```
 # Solution
