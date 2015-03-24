@@ -17,3 +17,10 @@
 [A9 - Using Components with Known Vulnerabilities](./a9)
 
 [A10 - Unvalidated Redirects and Forwards](./a10)
+
+[Extras - Mass-Assignment](./extras-mass-assignment)
+
+[Extras - Logic Flaws](./extras-logic-flaws)
+
+[Extras - Metaprogramming](./extras-metaprogramming)
+
