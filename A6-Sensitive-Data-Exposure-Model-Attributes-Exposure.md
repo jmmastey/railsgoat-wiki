@@ -50,7 +50,7 @@ Note that all attributes associated with this user are returned via the API.
 
 ### Model Attributes Exposure - ATTACK
 
-Use the API and review the data returned. Additional information on exploiting the API available under the _Extras > Logic Flaws Section_.
+Use the API and review the data returned. Additional information on exploiting the API [available here](https://github.com/OWASP/railsgoat/wiki/Extras-Broken-Regular-Expression).
 
 ### Model Attributes Exposure - SOLUTION
 
