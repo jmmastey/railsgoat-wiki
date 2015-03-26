@@ -8,7 +8,7 @@
 
 [A5 - Security Misconfiguration](./A5-Security-Misconfiguration)
 
-[A6 - Sensitive Data Exposure](./a6)
+[A6 - Sensitive Data Exposure](./A6-Sensitive-Data-Exposure)
 
 [A7 - Missing Function Level Access Control](./a7)
 
