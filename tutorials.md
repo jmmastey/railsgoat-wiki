@@ -1,6 +1,6 @@
 [A1 - Injection](./A1-Injection)
 
-[A2 - Broken Authentication and Session Management](./a2)
+[A2 - Broken Authentication and Session Management](./A2-Broken-Authentication-and-Session-Management)
 
 [A3 - Cross-Site Scripting](./a3)
 
