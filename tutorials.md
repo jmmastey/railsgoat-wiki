@@ -4,7 +4,7 @@
 
 [A3 - Cross-Site Scripting](./A3-XSS)
 
-[A4 - Insecure Direct Object Reference](./a4)
+[A4 - Insecure Direct Object Reference](./A4-IDOR)
 
 [A5 - Security Misconfiguration](./a5)
 
