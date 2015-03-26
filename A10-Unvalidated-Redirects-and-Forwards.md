@@ -1,1 +1,1 @@
-[Unvalidated Redirects and Forwards](./A10-Unvalidated-Redirects-and-Forwards)
+[Unvalidated Redirects and Forwards](./A10-Unvalidated-Redirects-and-Forwards-(redirect_to))
