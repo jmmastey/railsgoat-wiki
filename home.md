@@ -3,5 +3,3 @@
 ### Table of Contents
 
 [Tutorials](./tutorials)
-
-[Test](./test/sample)
