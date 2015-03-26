@@ -12,7 +12,7 @@
 
 [A7 - Missing Function Level Access Control](./A7-Missing-Function-Level-Access-Control)
 
-[A8 - Cross Site Request Forgery](./a8)
+[A8 - Cross Site Request Forgery](./A8-Cross-Site-Request-Forgery)
 
 [A9 - Using Components with Known Vulnerabilities](./a9)
 
