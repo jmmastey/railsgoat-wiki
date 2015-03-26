@@ -16,7 +16,7 @@
 
 [A9 - Using Components with Known Vulnerabilities](./A9-Using-Components-with-Known-Vulnerabilities)
 
-[A10 - Unvalidated Redirects and Forwards](./a10)
+[A10 - Unvalidated Redirects and Forwards](./A10-Unvalidated-Redirects-and-Forwards)
 
 [Extras - Mass-Assignment](./extras-mass-assignment)
 
