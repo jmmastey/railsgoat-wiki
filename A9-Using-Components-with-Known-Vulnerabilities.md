@@ -1,1 +1,1 @@
-[ Using Components with Known Vulnerabilities (DOM XSS / JQuery Snippet)](./A9-Using-Components-with-Known-Vulnerabilities)
+[ Using Components with Known Vulnerabilities (DOM XSS / JQuery Snippet)](./A9-Using-Components-with-Known-Vulnerabilities-(JQuery))
