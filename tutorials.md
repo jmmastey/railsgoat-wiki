@@ -10,7 +10,7 @@
 
 [A6 - Sensitive Data Exposure](./A6-Sensitive-Data-Exposure)
 
-[A7 - Missing Function Level Access Control](./a7)
+[A7 - Missing Function Level Access Control](./A7-Missing-Function-Level-Access-Control)
 
 [A8 - Cross Site Request Forgery](./a8)
 
