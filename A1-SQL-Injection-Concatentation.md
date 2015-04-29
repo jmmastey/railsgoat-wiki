@@ -29,7 +29,7 @@ end
 
 You will need to use an intercepting proxy or otherwise modify the request prior to it being received by the application. Browse to account_settings (top right, drop-down). Once at the account settings page, type in passwords, and click submit. Now modify the request from:
 
-    POST /users/5.json HTTP/1.1
+    PUT /users/5.json HTTP/1.1
     Host: railsgoat.dev
     User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:19.0) Gecko/20100101 Firefox/19.0
     Accept: */*
@@ -48,7 +48,7 @@ You will need to use an intercepting proxy or otherwise modify the request prior
 
 Now we will inject some SQL Query syntax that will return the first result of a query that looks for users that have an admin attribute that is true. So essentially, instead of looking up the user whose data we will change by our user ID, we tell the database to return the first admin and update their data. In this instance, we are changing admin@metacorp.com's password to testtest. We can later login as that user. Granted, we could just change the user_id to 1 and do the same thing, and there are other ways to exploit this weakness but this is a clear-cut example of SQL Injection. **It is important to note that we have omitted the email, first, and last name parameters as a duplicate email address will cause errors. Additionally, we do not wish to change the admin's first and last name as this would alert the admin to the "hack"**.
 
-    POST /users/5.json HTTP/1.1
+    PUT /users/5.json HTTP/1.1
     Host: railsgoat.dev
     User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:19.0) Gecko/20100101 Firefox/19.0
     Accept: */*
