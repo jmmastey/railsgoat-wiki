@@ -23,6 +23,7 @@ def update
   end
 end
 ```
+
 #Solution
 
 ### SQL Injection - ATTACK
@@ -88,8 +89,9 @@ end
 ...However, since we are discussing fixing vulnerable SQL queries, let's discuss parameterized queries. Parameterized queries separate the SQL Query from the dynamic and often untrusted data. You could replace the string interpolated value with the following query and effectively separate the query from untrusted data:
 
 ```ruby
-user = User.find(:first, :conditions => ["user_id = ?", "#{params[:user][:user_id]}"])
+user = User.find(:first, :conditions => ["user_id = ?", params[:user][:user_id]])
 ```
+
 #Hint
 
 I wonder who else's account needs updating?
