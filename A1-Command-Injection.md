@@ -65,7 +65,7 @@ Content-Length: 1731
 ----------54316025
 Content-Disposition: form-data; name="utf8"
 
-â
+✓
 ----------54316025
 Content-Disposition: form-data; name="authenticity_token"
 
