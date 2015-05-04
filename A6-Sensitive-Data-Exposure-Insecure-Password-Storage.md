@@ -51,7 +51,7 @@ def self.authenticate(email, password)
  if user and user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
      user
  else
-    "Invalid Credentials Supplied"
+    raise "Invalid Credentials Supplied"
  end
 end
 
