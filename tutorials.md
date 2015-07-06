@@ -1,4 +1,4 @@
-[A1 - Injection](tuts/totally-unique)
+[A1 - Injection](./tuts/totally-unique)
 
 [A2 - Broken Authentication and Session Management](./A2-Broken-Authentication-and-Session-Management)
 
