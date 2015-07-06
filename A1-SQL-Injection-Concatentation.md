@@ -23,6 +23,7 @@ def update
   end
 end
 ```
+
 #Solution
 
 ### SQL Injection - ATTACK
@@ -44,7 +45,7 @@ You will need to use an intercepting proxy or otherwise modify the request prior
     Pragma: no-cache
     Cache-Control: no-cache
     
-    utf8=â&_method=put&authenticity_token=GXhLKKhfBXdFx5i6iqHEd5E32Kebn1+G35eA87RW1tU=&user[user_id]=5&user[email]=ken@metacorp.com&user[first_name]=Ken&user[last_name]=Johnson&user[password]=testtest&user[password_confirmation]=testtest
+    utf8=✓&_method=put&authenticity_token=GXhLKKhfBXdFx5i6iqHEd5E32Kebn1+G35eA87RW1tU=&user[user_id]=5&user[email]=ken@metacorp.com&user[first_name]=Ken&user[last_name]=Johnson&user[password]=testtest&user[password_confirmation]=testtest
 
 Now we will inject some SQL Query syntax that will return the first result of a query that looks for users that have an admin attribute that is true. So essentially, instead of looking up the user whose data we will change by our user ID, we tell the database to return the first admin and update their data. In this instance, we are changing admin@metacorp.com's password to testtest. We can later login as that user. Granted, we could just change the user_id to 1 and do the same thing, and there are other ways to exploit this weakness but this is a clear-cut example of SQL Injection. **It is important to note that we have omitted the email, first, and last name parameters as a duplicate email address will cause errors. Additionally, we do not wish to change the admin's first and last name as this would alert the admin to the "hack"**.
 
@@ -63,7 +64,7 @@ Now we will inject some SQL Query syntax that will return the first result of a 
     Pragma: no-cache
     Cache-Control: no-cache
 
-    utf8=â&_method=put&authenticity_token=GXhLKKhfBXdFx5i6iqHEd5E32Kebn1+G35eA87RW1tU=&user[user_id]=5') OR admin = 't' --'")&user[password]=testtest1&user[password_confirmation]=testtest1
+    utf8=✓&_method=put&authenticity_token=GXhLKKhfBXdFx5i6iqHEd5E32Kebn1+G35eA87RW1tU=&user[user_id]=5') OR admin = 't' --'")&user[password]=testtest1&user[password_confirmation]=testtest1
 
 ### SQL Injection - SOLUTION
 
@@ -88,8 +89,9 @@ end
 ...However, since we are discussing fixing vulnerable SQL queries, let's discuss parameterized queries. Parameterized queries separate the SQL Query from the dynamic and often untrusted data. You could replace the string interpolated value with the following query and effectively separate the query from untrusted data:
 
 ```ruby
-user = User.find(:first, :conditions => ["user_id = ?", "#{params[:user][:user_id]}"])
+user = User.find(:first, :conditions => ["user_id = ?", params[:user][:user_id]])
 ```
+
 #Hint
 
 I wonder who else's account needs updating?

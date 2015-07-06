@@ -21,7 +21,7 @@ end
 ```
 Ignore for a moment that the application actually tells you whether or not an email address exists :-). Instead, let's look at what would happen if this error message wasn't so specific. Even if the error message vulnerability was mitigated (because it indicates whether or not a user exists), there will be some variations in the application's response between a user that exists and one that does not (however so slight, considering MD5 is in use).
 
-To understand why, let's follow the flow of this code example. Firstly, the application look for a user by email. If not found, nothing else really happens. No further processing, password comparison, etc. If a user _is_ found, we will perform a password comparison and process as normal.
+To understand why, let's follow the flow of this code example. Firstly, the application looks for a user by email. If not found, nothing else really happens. No further processing, password comparison, etc. If a user _is_ found, we will perform a password comparison and process as normal.
 
 # Solution
 
