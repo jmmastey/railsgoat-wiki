@@ -2,4 +2,4 @@
 
 ### Table of Contents
 
-[Tutorials](./tutorials)
+[Rails 3 - Tutorials](./tutorials)
