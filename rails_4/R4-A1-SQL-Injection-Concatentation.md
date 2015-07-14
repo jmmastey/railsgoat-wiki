@@ -80,19 +80,28 @@ Now we will inject some SQL Query syntax that will return the first result of a 
 In this instance, the more secure route would be to reference the current_user object versus pulling from the database manually, using POST parameters provided by the user.
 
 ```ruby
-def update
-  message = false
-  user = current_user
-  user.skip_user_id_assign = true
-  user.update_attributes(params[:user].reject { |k| k == ("password" || "password_confirmation") || "user_id" })
-  pass = params[:user][:password]
-  user.password = pass if !(pass.blank?)
-  message = true if user.save!
-  respond_to do |format|
-    format.html { redirect_to user_account_settings_path(:user_id => current_user.user_id) }
-    format.json { render :json => {:msg => message ? "success" : "false "} }
+  def update
+    message = false
+    user = current_user
+    user = User.where("user_id = '#{params[:user][:user_id]}'").first
+    if user
+      user.skip_user_id_assign = true
+      user.skip_hash_password = true
+      user.update_attributes(user_params_without_password)
+      if !(params[:user][:password].empty?) && (params[:user][:password] == params[:user][:password_confirmation])
+        user.skip_hash_password = false
+        user.password = params[:user][:password]
+      end
+      message = true if user.save!
+      respond_to do |format|
+        format.html { redirect_to user_account_settings_path(:user_id => current_user.user_id) }
+        format.json { render :json => {:msg => message ? "success" : "false "} }
+      end
+    else
+      flash[:error] = "Could not update user!"
+      redirect_to user_account_settings_path(:user_id => current_user.user_id)
+    end
   end
-end
 ```
 
 ...However, since we are discussing fixing vulnerable SQL queries, let's discuss parameterized queries. Parameterized queries separate the SQL Query from the dynamic and often untrusted data. You could replace the string interpolated value with the following query and effectively separate the query from untrusted data:
