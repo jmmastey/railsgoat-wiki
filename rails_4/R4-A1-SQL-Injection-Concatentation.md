@@ -9,19 +9,28 @@ This example of SQL Injection also happens to be a form of Insecure Direct Objec
 Within app/controllers/users_controller.rb
 
 ```ruby
-def update
-  message = false
-  user = User.find(:first, :conditions => "user_id = '#{params[:user][:user_id]}'")
-  user.skip_user_id_assign = true
-  user.update_attributes(params[:user].reject { |k| k == ("password" || "password_confirmation") || "user_id" })
-  pass = params[:user][:password]
-  user.password = pass if !(pass.blank?)
-  message = true if user.save!
-  respond_to do |format|
-    format.html { redirect_to user_account_settings_path(:user_id => current_user.user_id) }
-    format.json { render :json => {:msg => message ? "success" : "false "} }
+  def update
+    message = false
+    # VULNERABLE CODE, ON THE NEXT LINE (WHERE STATEMENT)
+    user = User.where("user_id = '#{params[:user][:user_id]}'").first
+    if user
+      user.skip_user_id_assign = true
+      user.skip_hash_password = true
+      user.update_attributes(user_params_without_password)
+      if !(params[:user][:password].empty?) && (params[:user][:password] == params[:user][:password_confirmation])
+        user.skip_hash_password = false
+        user.password = params[:user][:password]
+      end
+      message = true if user.save!
+      respond_to do |format|
+        format.html { redirect_to user_account_settings_path(:user_id => current_user.user_id) }
+        format.json { render :json => {:msg => message ? "success" : "false "} }
+      end
+    else
+      flash[:error] = "Could not update user!"
+      redirect_to user_account_settings_path(:user_id => current_user.user_id)
+    end
   end
-end
 ```
 
 #Solution
