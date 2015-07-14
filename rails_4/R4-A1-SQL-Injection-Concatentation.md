@@ -83,7 +83,6 @@ In this instance, the more secure route would be to reference the current_user o
   def update
     message = false
     user = current_user
-    user = User.where("user_id = '#{params[:user][:user_id]}'").first
     if user
       user.skip_user_id_assign = true
       user.skip_hash_password = true
