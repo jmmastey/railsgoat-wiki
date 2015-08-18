@@ -9,7 +9,7 @@ Within the app/controllers/work_info_controller.rb file the follow code can be f
 ```ruby
 def index
   @user = User.find_by_user_id(params[:user_id])
-  if !(@user)
+  if !(@user) || @user.admin
     flash[:error] = "Sorry, no user with that user id exists"
     redirect_to home_dashboard_index_path
   end
