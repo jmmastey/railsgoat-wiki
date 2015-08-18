@@ -8,6 +8,8 @@ Railsgoat allows the redirection to the paths previously requested but for which
 
 The application performs zero validation of the path for which they will redirect users, following authentication. The URL parameter is used to determine where to redirect the user, if the url parameter is not present, the user will be redirect to their home page.
 
+app/controllers/sessions_controller.rb
+
 ```ruby
 def create
   path = params[:url].present? ? params[:url] : home_dashboard_index_path
