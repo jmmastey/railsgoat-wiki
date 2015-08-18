@@ -15,3 +15,5 @@
 [A8 - Cross Site Request Forgery](./R4-A8-Cross-Site-Request-Forgery)
 
 [A9 - Using Components with Known Vulnerabilities](./A9-Using-Components-with-Known-Vulnerabilities)
+
+[A10 - Unvalidated Redirects and Forwards](./A10-Unvalidated-Redirects-and-Forwards)
