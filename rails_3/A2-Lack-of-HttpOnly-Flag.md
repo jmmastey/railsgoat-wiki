@@ -26,8 +26,6 @@ Additionally, fire up Python's SimpleHTTPServer module using the following comma
 $ python -m SimpleHTTPServer
 ```
 
-Additionally, fire up Python's SimpleHTTPServer module using the following command:
-
 ### Lack of the HttpOnly Flag - SOLUTION
 
 Keep the default configuration "as-is" and do not make this change. If this exists in your code base, remove it.
