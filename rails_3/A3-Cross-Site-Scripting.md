@@ -33,7 +33,7 @@ When registering, enter your JavaScript tag such as <script>alert("ohai")</scrip
 
 ### Stored Cross-Site Scripting SOLUTION:
 
-Often developers error on the side of using "html_safe" versus "raw" with the idea being one is safer than the other. In this example, simply removing the .html_safe call would both eliminate the attack (by default, Rails 3.x html encodes these dangerous chars). Rails 2.x would require that any potentially malicious content is wrapped within an h() tag. Potentially malicious content should be thought of anything that is dynamically generated. Also, it is important to note that if for some reason you wanted to render HTML code in literal form, you can use things like sanitize() or strip_tags().
+Often developers error on the side of using "html_safe" versus "raw" with the idea being one is safer than the other. In this example, simply removing the .html_safe call would both eliminate the attack (by default, Rails 3.x and 4.x html encodes these dangerous chars). Rails 2.x would require that any potentially malicious content is wrapped within an h() tag. Potentially malicious content should be thought of anything that is dynamically generated. Also, it is important to note that if for some reason you wanted to render HTML code in literal form, you can use things like sanitize() or strip_tags().
 
 # Hint
 
