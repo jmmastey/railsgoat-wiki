@@ -3,3 +3,5 @@
 [A2 - Broken Authentication and Session Management](./A2-Broken-Authentication-and-Session-Management)
 
 [A3 - Cross-Site Scripting "XSS"](./A3-XSS)
+
+[A4 - Insecure Direct Object Reference](./A4-IDOR)
