@@ -10,7 +10,8 @@ Within app/models/user.rb
 validates :password, :presence => true,
                      :confirmation => true,
                      :length => {:within => 6..40},
-                     :on => :create
+                     :on => :create,
+                     :if => :password
 ```
 
 The application validates only the password length and nothing else. Developers can leverage the format option to apply a regular expression that checks the password has sufficient complexity.
