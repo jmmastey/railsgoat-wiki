@@ -9,3 +9,5 @@
 [A5 - Security Misconfiguration](./R4-A5-Security-Misconfiguration)
 
 [A6 - Sensitive Data Exposure](./A6-Sensitive-Data-Exposure)
+
+[A7 - Missing Function Level Access Control](./A7-Missing-Function-Level-Access-Control)
