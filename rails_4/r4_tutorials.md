@@ -7,3 +7,5 @@
 [A4 - Insecure Direct Object Reference](./A4-IDOR)
 
 [A5 - Security Misconfiguration](./R4-A5-Security-Misconfiguration)
+
+[A6 - Sensitive Data Exposure](./A6-Sensitive-Data-Exposure)
