@@ -84,7 +84,7 @@ The solution is fairly simple, remove the admin attribute from the attr_accessib
 def user_params
   params.require(:user).permit(:email, :first_name, :last_name, :user_id, :password, :password_confirmation)
 end
-```ruby
+```
 
 # Hint
 
