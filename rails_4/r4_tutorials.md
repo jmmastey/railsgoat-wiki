@@ -17,3 +17,7 @@
 [A9 - Using Components with Known Vulnerabilities](./A9-Using-Components-with-Known-Vulnerabilities)
 
 [A10 - Unvalidated Redirects and Forwards](./A10-Unvalidated-Redirects-and-Forwards)
+
+[Extras - Logic Flaws](./extras-logic-flaws)
+
+[Extras - Metaprogramming](./extras-metaprogramming)
