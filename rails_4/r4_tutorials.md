@@ -21,3 +21,5 @@
 [Extras - Logic Flaws](./extras-logic-flaws)
 
 [Extras - Metaprogramming](./extras-metaprogramming)
+
+[Extras - Mass Assignment](./R4-extras-mass-assignment)
