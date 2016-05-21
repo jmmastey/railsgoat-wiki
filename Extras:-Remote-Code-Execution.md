@@ -1,5 +1,11 @@
 ## Remote Code Execution
 
+[Remote Code Execution](https://www.owasp.org/index.php/Code_Injection)
+
+Code Injection is the general term for attack types which consist of injecting code that is then interpreted/executed by the application. This type of attack exploits poor handling of untrusted data. 
+
+# Bug
+
 Railsgoat includes a remote code execution vulnerability through Ruby's Marshal.load vulnerability. Ruby's Marshal.load also the deserialization of arbitrary objects. The password reset controller includes a deserialization vulnerability. During the forgot password flow, after the user clicks on the reset email link, the application verifies the token then adds a Marshaled user object which is posted during the password reset. 
 
 Within reset_password.html.erb
