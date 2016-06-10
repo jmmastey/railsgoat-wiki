@@ -2,6 +2,6 @@
 
 ### Table of Contents
 
-[Rails 3 - Tutorials](./rails_3/r3_tutorials.md)
+[Rails 3 - Tutorials](./r3_tutorials.md)
 
 [Rails 4 - Tutorials](./rails_4/r4_tutorials.md)
