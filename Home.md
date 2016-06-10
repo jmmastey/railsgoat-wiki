@@ -4,4 +4,4 @@
 
 [Rails 3 - Tutorials](./Rails-3-Tutorials)
 
-[Rails 4 - Tutorials](./rails_4/r4_tutorials.md)
+[Rails 4 - Tutorials](./Rails-4-Tutorials)
