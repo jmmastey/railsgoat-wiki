@@ -14,7 +14,7 @@ The following code was taken from app/views/sessions/new.html.erb:
  try {
      var hashParam = location.hash.split("#")[1];
      var paramName = hashParam.split('=')[0];
-     var paramValue = hashParam.split('=')[1];
+     var paramValue = decodeURIComponent(hashParam.split('=')[1]);
      document.write("<OPTION value=3>" +  paramValue  + "</OPTION>");
  } catch(err) {
  }
@@ -46,7 +46,7 @@ Leverage the Hogan function for escaping (found in the application.js file) to e
   try {
     var hashParam = location.hash.split("#")[1];
     var paramName = hashParam.split('=')[0];
-    var paramValue = hashParam.split('=')[1];
+    var paramValue = decodeURIComponent(hashParam.split('=')[1]);
     document.write("<OPTION value=3>" +   hoganEscape(paramValue)  + "</OPTION>");
   } catch(err) {
  }
