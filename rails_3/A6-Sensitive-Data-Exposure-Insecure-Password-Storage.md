@@ -63,6 +63,17 @@ def hash_password
 end
 ```
 
+In addition to changing the code, you must alter the database, generate two separate migrations. One to remove the `password` column from the user table and another to add both the `password_hash` and `password_salt` columns.
+
+```
+# Remove Password Column
+rails g migration RemovePasswordFromUsers password:string
+
+# Add password_hash and password_salt columns to the user table
+rails g migration AddPasswordHashAndSaltToUsers password_hash:text
+password_salt:text
+```
+
 # Hint
 
 How protected are those passwords in the database against cracking?
