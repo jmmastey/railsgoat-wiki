@@ -109,6 +109,12 @@ In this instance, the more secure route would be to reference the current_user o
 User.where("user_id = ?", params[:user][:user_id]).first
 ```
 
+Or more idiomatically in Rails:
+
+```ruby
+User.find_by(user_id: params[:user][:user_id])
+```
+
 #Hint
 
 I wonder who else's account needs updating?
