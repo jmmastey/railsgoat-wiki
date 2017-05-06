@@ -6,7 +6,7 @@ An OS command injection attack occurs when an attacker attempts to execute syste
 
 This manifestation of the bug occurs within the Benefits model. A system command is used to make a copy of the file the user has chosen to upload. User-supplied input is leveraged in creating this system command.
 
-Within app/controllers/benefits_controller.rb:
+Within `app/controllers/benefit_forms_controller.rb`:
 
 ```ruby
 def upload
