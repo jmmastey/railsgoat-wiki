@@ -3,7 +3,7 @@
 ### Table of Contents
 
 
-##### The tutorials are broken up by Rails version. Rails 3 and 4 vary in some ways that fix or introduce various security issues. Each version features tutorials to demonstrate these. Rails 4 tutorials name will be proceeded by R4.
+##### The tutorials are broken up by Rails version. Rails 3 and 4 vary in some ways that fix or introduce various security issues. Each version features tutorials to demonstrate these. Rails 4 and 5 tutorials name will be proceeded by R4 and R5.
 
 [Rails 3 - Tutorials](./Rails-3-Tutorials)
 
