@@ -8,3 +8,5 @@
 [Rails 3 - Tutorials](./Rails-3-Tutorials)
 
 [Rails 4 - Tutorials](./Rails-4-Tutorials)
+
+[Rails 5 - Tutorials](./Rails-5-Tutorials)
