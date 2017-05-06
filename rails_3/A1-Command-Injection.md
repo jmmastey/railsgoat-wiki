@@ -20,11 +20,10 @@ def upload
   redirect_to user_benefit_forms_path(:user_id => current_user.user_id)
 end
 ```
-Within app/models/benefits.rb:
+Within `app/models/benefits.rb`:
 
 ```ruby
 class Benefits < ActiveRecord::Base
- attr_accessor :backup
 
  def self.save(file, backup=false)
    data_path = Rails.root.join("public", "data")
