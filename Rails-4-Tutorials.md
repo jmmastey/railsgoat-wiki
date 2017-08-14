@@ -18,7 +18,7 @@
 
 [A10 - Unvalidated Redirects and Forwards](./A10-Unvalidated-Redirects-and-Forwards)
 
-[Extras - Logic Flaws](https://github.com/OWASP/railsgoat/wiki/R4-Extras:-Logic-Flaws)
+[Extras - Logic Flaws](https://github.com/OWASP/railsgoat/wiki/Extras:-Logic-Flaws)
 
 [Extras - Metaprogramming](https://github.com/OWASP/railsgoat/wiki/R4-Extras-Metaprogramming)
 
