@@ -20,6 +20,6 @@
 
 [Extras - Logic Flaws](https://github.com/OWASP/railsgoat/wiki/Extras:-Logic-Flaws)
 
-[Extras - Metaprogramming](https://github.com/OWASP/railsgoat/wiki/Extras-Metaprogramming)
+[Extras - Metaprogramming](https://github.com/OWASP/railsgoat/wiki/Extras:-Metaprogramming)
 
 [Extras - Mass Assignment](https://github.com/OWASP/railsgoat/wiki/R4-Extras-Mass-Assignment)
