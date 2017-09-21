@@ -40,19 +40,37 @@ Ensure you are logged out of the application. When requesting the login page, en
 
 ### Unvalidated Redirects and Forwards - SOLUTION
 
-To fix this vulnerability, validate the path. In our case, we really only want to redirect users to our site so the TLD is not important. In this case, leveraging URI.parse() can be incredibly helpful. We can change the code to something like:
+To fix this vulnerability, validate the path. In our case, we really only want to redirect users to locations on our site. To do this, we can extract the redirect path code to a separate method like this:
 
 ```ruby
-path = home_dashboard_index_path
-begin
- if params[:url].present?
-  path = URI.parse(params[:url]).path
- end
-rescue
+def post_authentication_redirect_path(default_path: home_dashboard_index_path)
+  path = params[:url] || default_path
+  Rails.application.routes.recognize_path(path)
+rescue ActionController::RoutingError
+  default_path
 end
 ```
 
-Further validation can occur with regular expression. If you must redirect to another application, remember to use URI.parse() and the host, path, and scheme (ssl or not) options FIRST, prior to performing regular expression validation. Additionally, always open and close your validation regexp using Ruby anchor tags \A and \z.
+And then call this code in our authentication method:
+ 
+```ruby
+def create
+  # ... snipped
+  
+  if user
+    session[:user_id] = user.user_id if User.where(:user_id => user.user_id).exists?
+    redirect_to post_authentication_redirect_path
+  else
+    # Removed this code, just doesn't seem specific enough!
+    #  flash[:error] = "Either your username and password is incorrect"
+    flash[:error] = e.message
+    render "new"
+  end
+end
+```
+ 
+
+There are several cases where this code would be insufficient (for instance, if we need to redirect a user to a location that isn't part of our routes). For more information, see [Extras: URLs vs URIs](./Extras:-URLs-vs-URIs.md).
 
 # Hint
 
