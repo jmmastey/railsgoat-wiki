@@ -91,6 +91,27 @@ Sloppy regexes are also frequently insecure on their own. If you take this
 approach, remember to anchor your regexes with \A and \z, or you'll likely be
 [attacked via your Regexes](Extras\:-Broken-Regular-Expression.md).
 
+We can make this a little cleaner (while still fixing the URI-versus-URL issue)
+by using URI parse to detect properly formatted URLs:
+
+```ruby
+WHITELISTED_HOSTS = [
+  "google.com",
+  "mysite.com",
+]
+
+parsed_host = URI.parse(params[:url]).host
+
+unless WHITELISTED_HOSTS.include?(parsed_host)
+  raise ActionController::RoutingError
+end
+
+redirect_to params[:url]
+```
+
+If an attacker attempts to provide a URI like `@evil.com/open-redirect`, our
+new approach will return a `nil` host and properly raise an error.
+
 One final approach is to avoid being passed arbitrary URLs at all. While our
 login method should be able to redirect you back to any location you came from,
 this won't always be true. Whenever possible, redirect to hardcoded locations
